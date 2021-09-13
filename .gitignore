@@ -2,3 +2,4 @@ ks_objekt.*
 plan/
 bin/
 obj/
+*.txt
