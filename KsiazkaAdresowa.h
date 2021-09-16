@@ -8,7 +8,6 @@
 #include <sstream>
 
 #include "UzytkownikMenedzer.h"
-#include "PlikZuzytkownikami.h"
 
 using namespace std;
 
@@ -17,7 +16,9 @@ class KsiazkaAdresowa {
     UzytkownikMenedzer uzytkownikMenedzer;
 
 public:
-    KsiazkaAdresowa();
+    KsiazkaAdresowa(string nazwaPlikuZuzytkownikami) : uzytkownikMenedzer(nazwaPlikuZuzytkownikami) {
+        uzytkownikMenedzer.wczytajUzytkownikowZpliku();
+    };
     void rejestracjaUzytkownika();
     void wypiszUzytkownikow();
 };

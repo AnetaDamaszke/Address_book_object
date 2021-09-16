@@ -7,12 +7,13 @@
 #include <cstdlib>
 
 #include "Uzytkownik.h"
+#include "MetodyPomocnicze.h"
 
 using namespace std;
 
 class PlikZuzytkownikami {
 
-    string nazwaPlikuZUzytkownikami;
+    string nazwaPlikuZuzytkownikami;
     fstream plikTekstowy;
 
     bool czyPlikJestPusty();
@@ -20,7 +21,7 @@ class PlikZuzytkownikami {
     Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
 
 public:
-    PlikZuzytkownikami();
+    PlikZuzytkownikami(string NAZWAPLIKUZUZYTKOWNIKAMI) : nazwaPlikuZuzytkownikami(NAZWAPLIKUZUZYTKOWNIKAMI) {};
     void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
     vector <Uzytkownik> wczytajUzytkownikowZpliku();
 };

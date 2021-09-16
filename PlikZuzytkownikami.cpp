@@ -1,15 +1,10 @@
 #include "PlikZuzytkownikami.h"
 #include "MetodyPomocnicze.h"
 
-PlikZuzytkownikami::PlikZuzytkownikami() {
-
-    nazwaPlikuZUzytkownikami = "Uzytkownicy.txt";
-}
-
 void PlikZuzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
 {
     string liniaZDanymiUzytkownika = "";
-    plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::app);
+    plikTekstowy.open(nazwaPlikuZuzytkownikami.c_str(), ios::app);
 
     if (plikTekstowy.good() == true)
     {
@@ -25,7 +20,7 @@ void PlikZuzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
         }
     }
     else
-        cout << "Nie udalo sie otworzyc pliku " << nazwaPlikuZUzytkownikami << " i zapisac w nim danych." << endl;
+        cout << "Nie udalo sie otworzyc pliku " << nazwaPlikuZuzytkownikami << " i zapisac w nim danych." << endl;
     plikTekstowy.close();
 }
 
@@ -55,7 +50,7 @@ vector<Uzytkownik> PlikZuzytkownikami::wczytajUzytkownikowZpliku() {
     string daneJednegoUzytkownikaOddzielonePionowymiKreskami = "";
     vector<Uzytkownik> uzytkownicy;
 
-    plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::in);
+    plikTekstowy.open(nazwaPlikuZuzytkownikami.c_str(), ios::in);
 
     if (plikTekstowy.good() == true)
     {
