@@ -120,7 +120,7 @@ string UzytkownikMenedzer::wczytajLinie()
 void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
 {
     Uzytkownik uzytkownik;
-    int idZalogowanegoUzytkownika = logowanieUzytkownika();
+    int idZalogowanegoUzytkownika;
     string noweHaslo = "";
     cout << "Podaj nowe haslo: ";
     noweHaslo = wczytajLinie();

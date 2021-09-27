@@ -19,13 +19,15 @@ class AdresatMenedzer {
     int idOstatniegoAdresata;
     vector <Adresat> adresaci;
     PlikZAdresatami plikZAdresatami;
-    string wczytajLinie();
 
+    string wczytajLinie();
     Adresat podajDaneNowegoAdresata();
+    void wyswietlDaneAdresata(Adresat adresat);
 
 public:
     AdresatMenedzer(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami) {};
     int dodajAdresata();
+    void wyswietlWszystkichAdresatow(vector <Adresat> &adresaci);
 
 };
 
