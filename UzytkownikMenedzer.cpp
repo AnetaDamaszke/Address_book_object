@@ -71,11 +71,6 @@ void UzytkownikMenedzer::wypiszUzytkownikow() {
 
 }
 
-void UzytkownikMenedzer::wczytajUzytkownikowZpliku() {
-
-    uzytkownicy = plikZuzytkownikami.wczytajUzytkownikowZpliku();
-}
-
 int UzytkownikMenedzer::logowanieUzytkownika()
 {
     Uzytkownik uzytkownik;

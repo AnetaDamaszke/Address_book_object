@@ -27,7 +27,7 @@ class AdresatMenedzer {
 public:
     AdresatMenedzer(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami) {};
     int dodajAdresata();
-    void wyswietlWszystkichAdresatow(vector <Adresat> &adresaci);
+    void wyswietlWszystkichAdresatow();
 
 };
 

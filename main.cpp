@@ -7,8 +7,8 @@ int main()
 {
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
 
-    ksiazkaAdresowa.logowanieUzytkownika();
-    ksiazkaAdresowa.dodajAdresata();
+    //ksiazkaAdresowa.logowanieUzytkownika();
+    ksiazkaAdresowa.wypiszUzytkownikow();
 
     return 0;
 }

@@ -51,9 +51,11 @@ string AdresatMenedzer::wczytajLinie()
     return wejscie;
 }
 
-void AdresatMenedzer::wyswietlWszystkichAdresatow(vector <Adresat> &adresaci)
+void AdresatMenedzer::wyswietlWszystkichAdresatow()
 {
     Adresat adresat;
+
+    plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci, idZalogowanegoUzytkownika);
 
     system("cls");
     if (!adresaci.empty())
@@ -73,9 +75,9 @@ void AdresatMenedzer::wyswietlWszystkichAdresatow(vector <Adresat> &adresaci)
     system("pause");
 }
 
-void wyswietlDaneAdresata(Adresat adresat)
+void AdresatMenedzer::wyswietlDaneAdresata(Adresat adresat)
 {
-    cout << endl << "Id:                 " << adresat.pobierzIdAdresata() << endl;
+    cout << endl << "Id:         " << adresat.pobierzIdAdresata() << endl;
     cout << "Imie:               " << adresat.pobierzImie() << endl;
     cout << "Nazwisko:           " << adresat.pobierzNazwisko() << endl;
     cout << "Numer telefonu:     " << adresat.pobierzNrTelefonu() << endl;

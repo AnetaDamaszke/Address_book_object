@@ -1,4 +1,6 @@
 #include "Adresat.h"
+#include "Uzytkownik.h"
+
 
 void Adresat::ustawIdAdresata(int idOstatniegoAdresata)
 {

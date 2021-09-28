@@ -27,10 +27,11 @@ class UzytkownikMenedzer {
     string wczytajLinie();
 
 public:
-    UzytkownikMenedzer(string nazwaPlikuZuzytkownikami) : plikZuzytkownikami(nazwaPlikuZuzytkownikami) {};
+    UzytkownikMenedzer(string nazwaPlikuZuzytkownikami) : plikZuzytkownikami(nazwaPlikuZuzytkownikami) {
+        uzytkownicy = plikZuzytkownikami.wczytajUzytkownikowZpliku();
+    };
     void rejestracjaUzytkownika();
     void wypiszUzytkownikow();
-    void wczytajUzytkownikowZpliku();
     int logowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     void wylogujUzytkownika();
