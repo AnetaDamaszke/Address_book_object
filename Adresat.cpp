@@ -1,15 +1,14 @@
 #include "Adresat.h"
 #include "Uzytkownik.h"
 
-
-void Adresat::ustawIdAdresata(int idOstatniegoAdresata)
+void Adresat::ustawId(int noweId)
 {
-    id = ++idOstatniegoAdresata;
+    id = noweId;
 }
 
-void Adresat::ustawIdUzytkownika(int idZalogowanegoUzytkownika)
+void Adresat::ustawIdUzytkownika(int noweIdUzytkownika)
 {
-    idUzytkownika = idZalogowanegoUzytkownika;
+    idUzytkownika = noweIdUzytkownika;
 }
 
 void Adresat::ustawImie(string noweImie)
@@ -37,7 +36,7 @@ void Adresat::ustawAdres(string nowyAdres)
     adres = nowyAdres;
 }
 
-int Adresat::pobierzIdAdresata()
+int Adresat::pobierzId()
 {
     return id;
 }

@@ -92,7 +92,8 @@ int UzytkownikMenedzer::logowanieUzytkownika()
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    return uzytkownicy[i].pobierzId();
+                    idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
+                    return idZalogowanegoUzytkownika;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
@@ -112,8 +113,7 @@ string UzytkownikMenedzer::wczytajLinie()
     return wejscie;
 }
 
-void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
-{
+void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika() {
     Uzytkownik uzytkownik;
     int idZalogowanegoUzytkownika;
     string noweHaslo = "";
@@ -133,8 +133,38 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
     plikZuzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
 
-void UzytkownikMenedzer::wylogujUzytkownika()
-{
+void UzytkownikMenedzer::wylogujUzytkownika() {
     idZalogowanegoUzytkownika = 0;
     adresaci.clear();
+}
+
+void UzytkownikMenedzer::wczytajUzytkownikowZPliku() {
+    Uzytkownik uzytkownik;
+    string daneJednegoUzytkownikaOddzielonePionowymiKreskami = "";
+    string nazwaPlikuZuzytkownikami;
+
+    fstream plikTekstowy;
+    plikTekstowy.open(nazwaPlikuZuzytkownikami.c_str(), ios::in);
+
+    if (plikTekstowy.good() == true)
+    {
+        while (getline(plikTekstowy, daneJednegoUzytkownikaOddzielonePionowymiKreskami))
+        {
+            uzytkownik = plikZuzytkownikami.pobierzDaneUzytkownika(daneJednegoUzytkownikaOddzielonePionowymiKreskami);
+            uzytkownicy.push_back(uzytkownik);
+        }
+
+    }
+    plikTekstowy.close();
+}
+
+bool UzytkownikMenedzer::czyUzytkownikJestZalogowany() {
+    if (idZalogowanegoUzytkownika > 0)
+        return true;
+    else
+        return false;
+}
+
+int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika() {
+    return idZalogowanegoUzytkownika;
 }
