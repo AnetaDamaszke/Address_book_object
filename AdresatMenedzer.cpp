@@ -12,10 +12,10 @@ void AdresatMenedzer::dodajAdresata()
     adresat = podajDaneNowegoAdresata();
 
     adresaci.push_back(adresat);
-    if(plikZAdresatami.dopiszAdresataDoPliku(adresat))
+    if(plikZAdresatami.dopiszAdresataDoPliku(adresat) == true)
         cout << "Adresat zostal dodany" << endl;
     else
-        cout << "B³ad. Nie udalo sie dodac adresata" << endl;
+        cout << "Blad. Nie udalo sie dodac adresata" << endl;
 
     system("pause");
 }

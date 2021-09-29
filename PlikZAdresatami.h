@@ -14,7 +14,7 @@ using namespace std;
 
 class PlikZAdresatami {
 
-    string nazwaPlikuZAdresatami;
+    const string NAZWA_PLIKU_Z_ADRESATAMI;
     int idOstatniegoAdresata;
     vector<Adresat> adresaci;
 
@@ -26,7 +26,7 @@ class PlikZAdresatami {
     string pobierzLiczbe(string tekst, int pozycjaZnaku);
 
 public:
-    PlikZAdresatami(string NAZWAPLIKUZADRESATAMI) : nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI)
+    PlikZAdresatami(string nazwaPlikuZAdresatami) : NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami)
     {
         idOstatniegoAdresata = 0;
     };

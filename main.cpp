@@ -69,3 +69,17 @@ int main()
 
     return 0;
 }
+
+
+//-----TESTY
+#include "AdresatMenedzer.h"
+#include "PlikZAdresatami.h"
+
+int __main()
+{
+    AdresatMenedzer adresatMenedzer("Adresaci.txt", 1);
+    PlikZAdresatami plikZAdresatami("Adresaci.txt");
+
+    adresatMenedzer.wyswietlWszystkichAdresatow();
+
+}

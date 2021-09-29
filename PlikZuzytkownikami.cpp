@@ -17,8 +17,9 @@ void PlikZuzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
         }
         else
         {
-            plikTekstowy << endl << liniaZDanymiUzytkownika ;
+            plikTekstowy << liniaZDanymiUzytkownika;
         }
+        plikTekstowy << endl;
     }
     else
         cout << "Nie udalo sie otworzyc pliku " << NAZWA_PLIKU_Z_UZYTKOWNIKAMI << " i zapisac w nim danych." << endl;
