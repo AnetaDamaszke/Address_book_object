@@ -57,7 +57,6 @@ Adresat AdresatMenedzer::podajDaneNowegoAdresata()
 void AdresatMenedzer::wyswietlWszystkichAdresatow()
 {
     Adresat adresat;
-
     system("cls");
     if (!adresaci.empty())
     {
@@ -65,7 +64,7 @@ void AdresatMenedzer::wyswietlWszystkichAdresatow()
         cout << "-----------------------------------------------" << endl;
         for (int i=0; i < adresaci.size(); i++)
         {
-            wyswietlDaneAdresata(adresat);
+            wyswietlDaneAdresata(adresaci[i]);
         }
         cout << endl;
     }
@@ -78,7 +77,7 @@ void AdresatMenedzer::wyswietlWszystkichAdresatow()
 
 void AdresatMenedzer::wyswietlDaneAdresata(Adresat adresat)
 {
-    cout << endl << "Id:         " << adresat.pobierzId() << endl;
+    cout << endl << "Id:                 " << adresat.pobierzId() << endl;
     cout << "Imie:               " << adresat.pobierzImie() << endl;
     cout << "Nazwisko:           " << adresat.pobierzNazwisko() << endl;
     cout << "Numer telefonu:     " << adresat.pobierzNrTelefonu() << endl;
