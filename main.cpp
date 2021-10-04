@@ -51,11 +51,11 @@ int main()
                 ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
             case '5':
-                //idUsunietegoAdresata = usunAdresata(adresaci);
+                ksiazkaAdresowa.usunAdresata();
                 //idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
                 break;
             case '6':
-                //edytujAdresata(adresaci);
+                ksiazkaAdresowa.edytujAdresata();
                 break;
             case '7':
                 //zmianaHaslaZalogowanegoUzytkownika(uzytkownicy, idZalogowanegoUzytkownika);
@@ -80,6 +80,6 @@ int __main()
     AdresatMenedzer adresatMenedzer("Adresaci.txt", 1);
     PlikZAdresatami plikZAdresatami("Adresaci.txt");
 
-    plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(1);
-
+    adresatMenedzer.edytujAdresata();
+    adresatMenedzer.wyswietlWszystkichAdresatow();
 }
