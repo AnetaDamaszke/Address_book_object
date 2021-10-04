@@ -80,6 +80,6 @@ int __main()
     AdresatMenedzer adresatMenedzer("Adresaci.txt", 1);
     PlikZAdresatami plikZAdresatami("Adresaci.txt");
 
-    plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(1);
+    plikZAdresatami.usunWybranaLinieWPliku(3);
 
 }
