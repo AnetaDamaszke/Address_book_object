@@ -55,7 +55,7 @@ int main()
                 //idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
                 break;
             case '6':
-                //edytujAdresata(adresaci);
+                ksiazkaAdresowa.edytujAdresata();
                 break;
             case '7':
                 //zmianaHaslaZalogowanegoUzytkownika(uzytkownicy, idZalogowanegoUzytkownika);
@@ -80,6 +80,6 @@ int __main()
     AdresatMenedzer adresatMenedzer("Adresaci.txt", 1);
     PlikZAdresatami plikZAdresatami("Adresaci.txt");
 
-    plikZAdresatami.usunWybranaLinieWPliku(3);
-
+    adresatMenedzer.edytujAdresata();
+    adresatMenedzer.wyswietlWszystkichAdresatow();
 }

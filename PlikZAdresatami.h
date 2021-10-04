@@ -37,6 +37,7 @@ public:
     int pobierzIdOsatniegoAdresata();
     int ustawIdOsatniegoAdresata(int id);
     void usunWybranaLinieWPliku(int idUsuwanegoAdresata);
+    void edytujWybranaLinieWPliku(int idEdytowanegoAdresata, string liniaZDanymiAdresataOddzielonePionowymiKreskami);
 
 };
 
