@@ -33,6 +33,7 @@ public:
     bool dopiszAdresataDoPliku(Adresat adresat);
     vector<Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     int pobierzIdOsatniegoAdresata();
+    int ustawIdOsatniegoAdresata(int id);
 
 };
 

@@ -64,6 +64,7 @@ string PlikZAdresatami::zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKre
 vector<Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika)
 {
     Adresat adresat;
+    int liczba;
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";
     string daneOstaniegoAdresataWPliku = "";
     fstream plikTekstowy;
@@ -73,13 +74,14 @@ vector<Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(i
     {
         while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami))
         {
+            adresat = pobierzDaneAdresata(daneJednegoAdresataOddzielonePionowymiKreskami);
+            ustawIdOsatniegoAdresata(adresat.pobierzId());
+
             if(idZalogowanegoUzytkownika == pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(daneJednegoAdresataOddzielonePionowymiKreskami))
             {
-                adresat = pobierzDaneAdresata(daneJednegoAdresataOddzielonePionowymiKreskami);
                 adresaci.push_back(adresat);
             }
         }
-        //daneOstaniegoAdresataWPliku = daneJednegoAdresataOddzielonePionowymiKreskami;
     }
     else
         cout << "Nie udalo sie otworzyc pliku i wczytac danych." << endl;
@@ -96,27 +98,13 @@ int PlikZAdresatami::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(strin
     return idAdresata;
 }
 
+int PlikZAdresatami::ustawIdOsatniegoAdresata(int id)
+{
+    idOstatniegoAdresata = id;
+}
+
 int PlikZAdresatami::pobierzIdOsatniegoAdresata()
 {
-    Adresat adresat;
-    string daneJednegoAdresataOddzielonePionowymiKreskami = "";
-    string daneOstaniegoAdresataWPliku = "";
-    fstream plikTekstowy;
-    plikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
-
-    if (plikTekstowy.good() == true)
-    {
-        while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami))
-        {
-            daneOstaniegoAdresataWPliku = daneJednegoAdresataOddzielonePionowymiKreskami;
-
-            if(daneOstaniegoAdresataWPliku != "")
-            {
-                idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku);
-            }
-        }
-    }
-    plikTekstowy.close();
     return idOstatniegoAdresata;
 }
 
