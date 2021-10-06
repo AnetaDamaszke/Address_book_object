@@ -17,6 +17,8 @@ void AdresatMenedzer::dodajAdresata()
     else
         cout << "Blad. Nie udalo sie dodac adresata" << endl;
 
+    cout << "Id ostatniego adresata: " << plikZAdresatami.pobierzIdOsatniegoAdresata() << endl;
+
     system("pause");
 }
 
@@ -97,6 +99,8 @@ int AdresatMenedzer::usunAdresata()
     char znak;
     bool czyIstniejeAdresat = false;
 
+
+
     for (vector <Adresat>::iterator itr = adresaci.begin(); itr != adresaci.end(); itr++)
     {
         if (itr -> pobierzId() == idUsuwanegoAdresata)
@@ -108,6 +112,8 @@ int AdresatMenedzer::usunAdresata()
             {
                 plikZAdresatami.usunWybranaLinieWPliku(idUsuwanegoAdresata);
                 adresaci.erase(itr);
+                plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+                //cout << "Id ostatniego adresata: " << plikZAdresatami.pobierzIdOsatniegoAdresata() << endl;
                 cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
                 system("pause");
                 return idUsuwanegoAdresata;
@@ -125,6 +131,9 @@ int AdresatMenedzer::usunAdresata()
         cout << endl << "Nie ma takiego adresata w ksiazce adresowej" << endl << endl;
         system("pause");
     }
+
+
+
     return 0;
 }
 

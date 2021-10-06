@@ -71,13 +71,17 @@ int main()
 
 
 //-----TESTY
-#include "UzytkownikMenedzer.h"
-#include "PlikZuzytkownikami.h"
+#include "AdresatMenedzer.h"
+#include "PlikZAdresatami.h"
 
 int __main()
 {
-    UzytkownikMenedzer uzytkownikMenedzer("Uzytkownicy.txt");
-    PlikZuzytkownikami likZuzytkownikami("Uzytkownicy.txt");
+    AdresatMenedzer adresatMenedzer("Adresaci.txt", 1);
+    PlikZAdresatami plikZAdresatami("Adresaci.txt");
 
-    uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika();
+
+    adresatMenedzer.dodajAdresata();
+    adresatMenedzer.usunAdresata();
+
+
 }
