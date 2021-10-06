@@ -24,7 +24,6 @@ class UzytkownikMenedzer {
     bool czyIstniejeLogin(string login);
     Uzytkownik podajDaneNowegoUzytkownika();
     Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
-    string wczytajLinie();
 
 public:
     UzytkownikMenedzer(string nazwaPlikuZuzytkownikami) : plikZuzytkownikami(nazwaPlikuZuzytkownikami) {

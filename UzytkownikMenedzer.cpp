@@ -77,7 +77,7 @@ int UzytkownikMenedzer::logowanieUzytkownika()
     string login = "", haslo = "";
 
     cout << "Podaj login: ";
-    login = wczytajLinie();
+    login = MetodyPomocnicze::wczytajLinie();
 
     for(int i=0; i<uzytkownicy.size(); i++)
     {
@@ -86,7 +86,7 @@ int UzytkownikMenedzer::logowanieUzytkownika()
             for (int iloscProb = 3; iloscProb > 0; iloscProb--)
             {
                 cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
-                haslo = wczytajLinie();
+                haslo = MetodyPomocnicze::wczytajLinie();
 
                 if (uzytkownicy[i].pobierzHaslo() == haslo)
                 {
@@ -104,13 +104,6 @@ int UzytkownikMenedzer::logowanieUzytkownika()
     cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
     system("pause");
     return 0;
-}
-
-string UzytkownikMenedzer::wczytajLinie()
-{
-    string wejscie = "";
-    getline(cin, wejscie);
-    return wejscie;
 }
 
 void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika() {
