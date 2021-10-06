@@ -42,23 +42,22 @@ int main()
                 ksiazkaAdresowa.dodajAdresata();
                 break;
             case '2':
-                //wyszukajAdresatowPoImieniu(adresaci);
+                ksiazkaAdresowa.wyszukajAdresatowPoImieniu();
                 break;
             case '3':
-                //wyszukajAdresatowPoNazwisku(adresaci);
+                ksiazkaAdresowa.wyszukajAdresatowPoNazwisku();
                 break;
             case '4':
                 ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
             case '5':
                 ksiazkaAdresowa.usunAdresata();
-                //idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
                 break;
             case '6':
                 ksiazkaAdresowa.edytujAdresata();
                 break;
             case '7':
-                //zmianaHaslaZalogowanegoUzytkownika(uzytkownicy, idZalogowanegoUzytkownika);
+                ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 break;
             case '8':
                 ksiazkaAdresowa.wylogujUzytkownika();
@@ -72,14 +71,13 @@ int main()
 
 
 //-----TESTY
-#include "AdresatMenedzer.h"
-#include "PlikZAdresatami.h"
+#include "UzytkownikMenedzer.h"
+#include "PlikZuzytkownikami.h"
 
 int __main()
 {
-    AdresatMenedzer adresatMenedzer("Adresaci.txt", 1);
-    PlikZAdresatami plikZAdresatami("Adresaci.txt");
+    UzytkownikMenedzer uzytkownikMenedzer("Uzytkownicy.txt");
+    PlikZuzytkownikami likZuzytkownikami("Uzytkownicy.txt");
 
-    adresatMenedzer.edytujAdresata();
-    adresatMenedzer.wyswietlWszystkichAdresatow();
+    uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika();
 }

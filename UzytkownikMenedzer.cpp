@@ -114,15 +114,15 @@ string UzytkownikMenedzer::wczytajLinie()
 }
 
 void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika() {
+
     Uzytkownik uzytkownik;
-    int idZalogowanegoUzytkownika;
     string noweHaslo = "";
     cout << "Podaj nowe haslo: ";
-    noweHaslo = wczytajLinie();
+    noweHaslo = MetodyPomocnicze::wczytajLinie();
 
     for(int i=0; i<uzytkownicy.size(); i++)
     {
-        if (uzytkownicy[i].pobierzId() == idZalogowanegoUzytkownika)
+        if (uzytkownicy[i].pobierzId() == pobierzIdZalogowanegoUzytkownika())
         {
             uzytkownicy[i].ustawHaslo(noweHaslo);
             cout << "Haslo zostalo zmienione." << endl << endl;
